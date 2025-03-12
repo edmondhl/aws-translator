@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aws-sdk/client-lex-runtime-v2": "^3.758.0",
+    "@tailwindcss/vite": "^4.0.13",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
