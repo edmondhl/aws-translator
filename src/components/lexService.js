@@ -1,10 +1,10 @@
 import { LexRuntimeV2Client, RecognizeTextCommand } from "@aws-sdk/client-lex-runtime-v2";
 
 const lexClient = new LexRuntimeV2Client({
-    region: process.env.REACT_APP_AWS_REGION,
+    region: VITE_AWS_REGION,
     credentials: {
-      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      accessKeyId: VITE_AWS_ACCESS_KEY,
+      secretAccessKey: VITE_AWS_SECRET_ACCESS_KEY,
     },
   });
 
