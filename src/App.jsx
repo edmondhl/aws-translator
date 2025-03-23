@@ -1,12 +1,13 @@
-import { useState } from 'react'
-
 import './App.css'
+import Example from './components/Toggle'
+import Userinput from './components/Userinput'
 
 function App() {
 
   return (
-    <div className= 'text-red-500 text-4xl'>   
-      hello
+    <div >  
+      <Example />
+      <Userinput />
     </div>
   )
 }

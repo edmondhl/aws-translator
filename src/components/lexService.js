@@ -1,17 +1,18 @@
 import { LexRuntimeV2Client, RecognizeTextCommand } from "@aws-sdk/client-lex-runtime-v2";
 
 const lexClient = new LexRuntimeV2Client({
-    region: VITE_AWS_REGION,
-    credentials: {
-      accessKeyId: VITE_AWS_ACCESS_KEY,
-      secretAccessKey: VITE_AWS_SECRET_ACCESS_KEY,
-    },
-  });
+  region: import.meta.env.VITE_AWS_REGION, 
+  credentials: {
+    accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY,
+    secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY,
+  },
+});
 
-const botId = ""; //  Lex bot ID
-const botAliasId = ""; //  bot alias ID
-const localeId = "en_US"; //  bot's settings
-const sessionId = "user-session"; // Unique identifier for conversation session
+
+const botId = "XZFQM8T2JE"; 
+const botAliasId = "TSTALIASID"; 
+const localeId = "en_US"; 
+const sessionId = "user-session"; 
 
 export const sendMessageToLex = async (message) => {
   const params = {
