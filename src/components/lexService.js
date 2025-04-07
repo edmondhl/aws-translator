@@ -9,7 +9,7 @@ const lexClient = new LexRuntimeV2Client({
 });
 
 
-const botId = "XZFQM8T2JE"; 
+const botId = "MTPOEUFFCZ"; 
 const botAliasId = "TSTALIASID"; 
 const localeId = "en_US"; 
 const sessionId = "user-session"; 

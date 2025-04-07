@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect  } from "react";
 import { sendMessageToLex } from "./lexService";
 
 const Userinput = () => {
@@ -25,7 +25,15 @@ const Userinput = () => {
       console.error("Error sending message to Lex:", error);
     }
   };
-  
+  const messagesBottomRef = useRef(null);
+
+const scrollToBottom = () => {
+  messagesBottomRef.current?.scrollIntoView({ behavior: "auto" });
+};
+
+useEffect(() => {
+  scrollToBottom();
+}, [messages]);
 
   return (
     
@@ -35,12 +43,13 @@ const Userinput = () => {
           <div
             key={index}
             className={`p-2 rounded-2xl text-center w-fit min-w-[5rem] max-w-1/2 ${
-              msg.sender === "user" ? "dark:bg-[rgb(34,51,70)] ml-auto bg-[rgb(153,200,255)]" : "dark:bg-gray-700 bg-[rgb(192,197,202)]"
+              msg.sender === "user" ? "dark:bg-[rgb(55,82,114)] ml-auto bg-[rgb(153,200,255)] mr-2" : "dark:bg-gray-600 bg-[rgb(192,197,202)]"
             }`}
           >
             {msg.text}
           </div>
         ))}
+        <div ref={messagesBottomRef} />
       </div>
       <div className="flex gap-2 mt-2 mb-2 text-lg">
         <input

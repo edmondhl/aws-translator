@@ -13,7 +13,7 @@ const Toggle = () => {
 
 const SliderToggle = ({ theme, setTheme }) => {
   return (
-    <div className="fixed top-0 right-0 flex w-fit items-center rounded-full ">
+    <div className="fixed top-5 right-2 flex w-fit items-center rounded-full ">
       <button
         className={`${TOGGLE_CLASSES} ${
           theme === "light" ? "text-white" : "text-slate-300"
