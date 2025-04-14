@@ -1,3 +1,4 @@
+
 #root {
   max-width: 900px;
   margin: auto;
@@ -29,4 +30,10 @@
 }
 .dark ::-webkit-scrollbar-thumb:active {
   background: #555; 
+}
+body{
+  background-color: white;
+}
+.dark body{
+  background-color: #171717;
 }

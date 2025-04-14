@@ -5,7 +5,7 @@ import Userinput from './components/Userinput'
 function App() {
 
   return (
-    <div >  
+    <div > 
       <Example />
       <Userinput />
     </div>

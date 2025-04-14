@@ -38,12 +38,12 @@ useEffect(() => {
   return (
     
     <div className="flex flex-col h-screen bg-white dark:bg-neutral-900 dark:text-white p-4 rounded-4xl">
-      <div className="flex-1 overflow-auto p-2 space-y-2">
+      <div className="flex-1 overflow-auto overflow-x-hidden p-2 space-y-2">
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`p-2 rounded-2xl text-center w-fit min-w-[5rem] max-w-1/2 ${
-              msg.sender === "user" ? "dark:bg-[rgb(55,82,114)] ml-auto bg-[rgb(153,200,255)] mr-2" : "dark:bg-gray-600 bg-[rgb(192,197,202)]"
+            className={`p-2 rounded-2xl text-center w-fit min-w-[5rem] max-w-[50%] ${
+              msg.sender === "user" ? "dark:bg-[rgb(55,82,114)] ml-auto bg-[rgb(153,200,255)] mr-2 animate-flyinleft" : "dark:bg-gray-600 bg-[rgb(192,197,202)] animate-flyinright"
             }`}
           >
             {msg.text}
@@ -65,7 +65,7 @@ useEffect(() => {
           placeholder="Type your message..."
         />
         <button
-          className="px-5 bg-blue-600 rounded-lg text-white"
+          className="px-5 bg-blue-600 rounded-lg text-white hover:pointer"
           onClick={handleSend}
         >
           Send
