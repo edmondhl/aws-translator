@@ -4,6 +4,7 @@ import { sendMessageToLex } from "./lexService";
 const Userinput = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -11,6 +12,7 @@ const Userinput = () => {
     const newMessages = [...messages, { text: input, sender: "user" }];
     setMessages(newMessages);
     setInput("");
+    setIsLoading(true);
   
     try {
       const lexResponse = await sendMessageToLex(input);
@@ -23,6 +25,8 @@ const Userinput = () => {
       }
     } catch (error) {
       console.error("Error sending message to Lex:", error);
+    } finally{
+      setIsLoading(false);
     }
   };
   const messagesBottomRef = useRef(null);
@@ -49,12 +53,17 @@ useEffect(() => {
             {msg.text}
           </div>
         ))}
+        {isLoading && (
+          <div className="p-2">
+            <div className="w-6 h-6 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
+          </div>
+        )}
         <div ref={messagesBottomRef} />
       </div>
       <div className="flex gap-2 mt-2 mb-2 text-lg">
         <input
           type="text"
-          className="flex-1 p-2 rounded-xl shadow-[0_4px_8px_#807f7f] bg-white dark:bg-gray-800 dark:border-2 dark:border-gray-600 dark:shadow-none focus:outline-none"
+          className="flex-1 p-2 rounded-xl shadow-[0_5px_20px_#807f7f] bg-white dark:bg-gray-800 dark:border-2 dark:border-gray-600 dark:shadow-none focus:outline-none"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {

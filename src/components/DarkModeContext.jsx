@@ -1,19 +1,20 @@
-import { useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-const useDarkMode = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "system"
-  );
+const DarkModeContext = createContext();
 
-  const element = document.documentElement;
+export const DarkModeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "system";
+  });
+
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const element = document.documentElement;
 
-  const applyTheme = (theme) => {
-    
-    if (theme === "dark") {
+  const applyTheme = (themeValue) => {
+    if (themeValue === "dark") {
       element.classList.add("dark");
       localStorage.setItem("theme", "dark");
-    } else if (theme === "light") {
+    } else if (themeValue === "light") {
       element.classList.remove("dark");
       localStorage.setItem("theme", "light");
     } else {
@@ -36,12 +37,15 @@ const useDarkMode = () => {
         applyTheme(e.matches ? "dark" : "light");
       }
     };
-
     darkQuery.addEventListener("change", changeHandler);
     return () => darkQuery.removeEventListener("change", changeHandler);
   }, []);
 
-  return [theme, setTheme];
+  return (
+    <DarkModeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
 };
 
-export default useDarkMode;
+export const useDarkMode = () => useContext(DarkModeContext);

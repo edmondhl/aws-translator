@@ -1,20 +1,15 @@
-import { motion } from "framer-motion";
+import { useDarkMode } from "./DarkModeContext";
 import { FiMoon, FiSun } from "react-icons/fi";
-import useDarkMode from "./DarkMode"; // Import the hook
+import { motion } from "framer-motion";
 
 const TOGGLE_CLASSES =
   "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10";
 
 const Toggle = () => {
-  const [theme, setTheme] = useDarkMode();
+  const { theme, setTheme } = useDarkMode();
 
-  return (<SliderToggle theme={theme} setTheme={setTheme} />);
-};
-
-const SliderToggle = ({ theme, setTheme }) => {
   return (
-    
-    <div className="fixed top-5 right-2 flex w-fit items-center rounded-full ">
+    <div className="fixed top-3 right-3 flex w-fit items-center rounded-full">
       <button
         className={`${TOGGLE_CLASSES} ${
           theme === "light" ? "text-white" : "text-slate-300"
