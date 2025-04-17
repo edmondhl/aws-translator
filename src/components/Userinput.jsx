@@ -54,7 +54,7 @@ useEffect(() => {
           </div>
         ))}
         {isLoading && (
-          <div className="p-2">
+          <div className="p-2 justify-center items-center flex">
             <div className="w-6 h-6 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
           </div>
         )}

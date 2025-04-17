@@ -48,8 +48,8 @@ export default {
           },
       },
       animation: {
-        flyinright: "flyinright 1s ease-in-out 0.75s both",
-        flyinleft: "flyinleft 1s ease-in-out 0.25s both",
+        flyinright: "flyinright 1s ease-in-out 0s both",
+        flyinleft: "flyinleft 1s ease-in-out 0s both",
       },      
     },
   },
