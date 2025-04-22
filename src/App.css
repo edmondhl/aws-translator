@@ -1,16 +1,17 @@
-
-@media (min-width: 1440px) {
+@media (max-width: 2560px) {
   #root {
     max-width: 900px;
     margin: auto;
   }
 }
-@media (min-width: 1024px) {
+@media (max-width: 1750px) {
   #root {
     max-width: 725px;
     margin: auto;
   }
 }
+
+
 ::-webkit-scrollbar {
   width: 10px;
 }
