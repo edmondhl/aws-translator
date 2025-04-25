@@ -29,5 +29,6 @@ export const sendMessageToLex = async (message) => {
     return response.messages.map(msg => msg.content).join("\n");
   } catch (error) {
     console.error("Lex Error:", error);
+    return "Error communicating with Lex/ No Access keys";
   }
 };
