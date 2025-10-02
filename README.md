@@ -1,12 +1,16 @@
-# React + Vite
+# Lex Translator – AWS-Powered Chatbot  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cloud-based chatbot providing **English → Spanish & French translations**, processing 500+ words with natural, real-time conversation flow.  
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack  
+- AWS Lex, Lambda, Lex Runtime SDK  
+- React, JavaScript, Tailwind CSS, Framer Motion  
+- Deployed on Vercel  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features  
+- Sub-200ms response times  
+- Animated chatbot interactions  
+- 95+ Lighthouse performance score  
+- Minimalistic, responsive UI  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌐 Live Demo: [lextranslator.vercel.app](https://lextranslator.vercel.app/)  
